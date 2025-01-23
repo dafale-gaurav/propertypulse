@@ -6,11 +6,12 @@ import PropertyImages from '@/components/PropertyImages';
 
 const PropertyPage = async ({ params }) => {
   await connectDB();
-  const property = await Property.findById(params.id).lean();
+  const { id } = await params
+  const property = await Property.findById(id).lean();
 
   return (
     <>
-      <PropertyHeaderImage image={property.images[0]} />
+      <PropertyHeaderImage image src={`/images/properties/${property.images[0]}`} />
       <section className='bg-blue-50'>
         <div className='container m-auto py-10 px-6'>
           <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
@@ -102,7 +103,7 @@ const PropertyPage = async ({ params }) => {
           </div>
         </div>
       </section>
-      <PropertyImages images={property.images} />
+      <PropertyImages images src={`/images/properties/${property.images[0]}`} />
     </>
   );
 };
