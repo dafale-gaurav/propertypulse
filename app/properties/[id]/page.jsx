@@ -11,7 +11,7 @@ const PropertyPage = async ({ params }) => {
 
   return (
     <>
-      <PropertyHeaderImage image src={`/images/properties/${property.images[0]}`} />
+      <PropertyHeaderImage image={`/images/properties/${property.images[0]}`} />
       <section className='bg-blue-50'>
         <div className='container m-auto py-10 px-6'>
           <div className='grid grid-cols-1 md:grid-cols-70/30 w-full gap-6'>
@@ -103,7 +103,7 @@ const PropertyPage = async ({ params }) => {
           </div>
         </div>
       </section>
-      <PropertyImages images src={`/images/properties/${property.images[0]}`} />
+      <PropertyImages images={property.images} />
     </>
   );
 };

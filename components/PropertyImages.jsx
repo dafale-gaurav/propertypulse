@@ -6,7 +6,7 @@ const PropertyImages = ({ images }) => {
       <div className='container mx-auto'>
         {images.length === 1 ? (
           <Image
-            src={images[0]}
+          src={`/images/properties/${image}`}
             alt=''
             className='object-cover h-[400px] mx-auto rounded-xl'
             width={1800}
@@ -25,7 +25,7 @@ const PropertyImages = ({ images }) => {
                 }`}
               >
                 <Image
-                  src={image}
+                  src={`/images/properties/${image}`}
                   alt=''
                   className='object-cover h-[400px] w-full rounded-xl'
                   width={1800}
